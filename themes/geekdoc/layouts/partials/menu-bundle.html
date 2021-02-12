@@ -1,0 +1,59 @@
+{{ $current := .current }}
+{{ template "menu-file" dict "sect" .source "current" $current "site" $current.Site }}
+
+{{ define "menu-file" }}
+{{ $current := .current }}
+{{ $site := .site }}
+
+<ul class="gdoc-nav__list">
+{{ range sort (default (seq 0) .sect) "weight" }}
+    {{ $current.Scratch.Set "current" $current }}
+    {{ $current.Scratch.Set "site" $site }}
+
+    <li>
+        {{ $ref := default false .ref }}
+        {{ $sub := default false .sub }}
+        {{ $collapse := default false .collapse }}
+        {{ if $ref }}
+            {{ $site := $current.Scratch.Get "site" }}
+            {{ $this := site.GetPage .ref }}
+            {{ $current := $current.Scratch.Get "current" }}
+            {{ $icon := default false .icon }}
+
+            <!-- TODO: Fix this ID -->
+            {{ $id := substr (sha1 $this.Permalink) 0 8 }}
+            {{ $isCurrent := eq $current $this }}
+            {{ $isAncestor := hasPrefix $current.RelPermalink $this.RelPermalink }}
+
+
+            {{ if and $sub $collapse }}
+            <input type="checkbox" id="{{ printf "navtree-%s" $id }}" class="gdoc-nav__toggle" {{ if or $isCurrent $isAncestor }}checked{{ end }}>
+            <label for="{{ printf "navtree-%s" $id }}" class="flex justify-between">
+            {{ end }}
+            <span class="flex">
+                {{ if $icon }}<svg class="icon {{ .icon }}"><use xlink:href="#{{ .icon }}"></use></svg>{{ end }}
+                <a href="{{ if .external }}{{ .ref }}{{ else }}{{ $this.RelPermalink }}{{ end }}"
+                    class="gdoc-nav__entry {{ if not .external }}{{ if eq $current $this }}is-active{{ end }}{{ end }}">
+                    {{ .name }}
+                </a>
+            </span>
+
+            {{ if and $sub $collapse }}
+                <svg class="icon keyborad_arrow_left"><use xlink:href="#keyborad_arrow_left"></use></svg>
+                <svg class="icon keyborad_arrow_down hidden"><use xlink:href="#keyborad_arrow_down"></use></svg>
+                </label>
+            {{ end }}
+        {{ else }}
+            <span class="flex">
+                {{ .name }}
+            </span>
+        {{ end }}
+
+        {{ if $sub }}
+            {{ template "menu-file" dict "sect" $sub "current" ($current.Scratch.Get "current") "site" ($current.Scratch.Get "site") }}
+        {{ end }}
+    </li>
+
+{{ end }}
+</ul>
+{{ end }}

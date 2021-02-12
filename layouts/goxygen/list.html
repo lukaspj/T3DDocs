@@ -1,0 +1,17 @@
+{{ define "main" }}
+    {{ partial "page-header" . }}
+    <article class="gdoc-markdown">
+        <h1>{{ partial "title" . }}</h1>
+        {{ partial "content" . }}
+    </article>
+
+    <ul>
+    {{ range where (where .Site.Pages ".Params.goxygen.section" $.Params.goxygen.section) ".Params.goxygen.kind" $.Params.goxygen.kind }}
+        {{ if not (eq . $) }}
+        <li>
+            <a href="{{.RelPermalink}}">{{.Title}}</a>
+        </li>
+        {{ end }}
+    {{ end }}
+    </ul>
+{{ end }}

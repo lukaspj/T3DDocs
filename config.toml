@@ -1,0 +1,30 @@
+baseURL = "https://t3ddocs.lukasj.org/"
+languageCode = "en-us"
+title = "Torque3D Documentation"
+theme = "geekdoc"
+
+# Required to get well formatted code blocks
+pygmentsUseClasses = true
+pygmentsCodeFences = true
+
+# disablePathToLower = true
+# enableGitInfo = true
+
+[taxonomies]
+    category = "categories"
+    tag = "tags"
+
+
+# Needed for mermaid shortcodes
+[markup]
+    [markup.goldmark.renderer]
+        # Needed for mermaid shortcode
+        unsafe = true
+    [markup.tableOfContents]
+        startLevel = 1
+        endLevel = 9
+
+[params]
+geekdocMenuBundle = true
+geekdocSearchShowParent = true
+geekdocCollapseSection = true

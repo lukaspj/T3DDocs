@@ -1,0 +1,37 @@
+main:
+- name: Coding Reference
+  ref: coding
+  collapse: true
+  sub:
+  - name: Classes
+    ref: coding/class
+  - name: Files
+    ref: _generated/coding/dir/dir_0b6ee6e7e9547e675db4add2e5de97da
+  - name: Groups
+    ref: coding/group
+  - name: Namespaces
+    ref: coding/namespace
+  - name: Pages
+    ref: coding/page
+    sub:
+    - name: Deprecated List
+      ref: _generated/coding/page/deprecated
+    - name: Todo List
+      ref: _generated/coding/page/todo
+  - name: Unions
+    ref: coding/union
+- name: Scripting Reference
+  ref: scripting
+  collapse: true
+  sub:
+  - name: Classes
+    ref: scripting/class
+  - name: Groups
+    ref: scripting/group
+  - name: Namespaces
+    ref: scripting/namespace
+  - name: Pages
+    ref: scripting/page
+    sub:
+    - name: Deprecated List
+      ref: _generated/scripting/page/deprecated

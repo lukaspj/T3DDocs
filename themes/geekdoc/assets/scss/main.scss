@@ -1,0 +1,13 @@
+@charset "utf-8";
+
+// Import base (variables and mixins), typography and general colors
+@import 'theme/_all';
+
+// TODO
+// Custom user stuff
+// This isn't good enough
+{{ if (fileExists "static/css/custom.css") }}
+@import '/css/custom.css';
+{{ else if (resources.Get "scss/custom.scss") }}
+@import 'custom';
+{{ end }}
