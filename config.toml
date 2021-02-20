@@ -28,3 +28,4 @@ pygmentsCodeFences = true
 geekdocMenuBundle = true
 geekdocSearchShowParent = true
 geekdocCollapseSection = true
+t3dversion = "4.0"

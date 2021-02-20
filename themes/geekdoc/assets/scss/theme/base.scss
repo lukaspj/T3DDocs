@@ -572,6 +572,18 @@ img {
 .gdoc-footer__link:visited {
   color: #ffa31e
 }
+.gdoc-versions {
+  margin-bottom: .5rem;
+  #gdoc_version_select {
+    width: 100%;
+    padding: .5rem;
+    padding-left: 2rem;
+    border: 1px solid #e9ecef;
+    border-radius: .15rem;
+    background: #f8f9fa;
+    color: #343a40;
+  }
+}
 .gdoc-search {
   position: relative
 }

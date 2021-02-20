@@ -6,6 +6,11 @@
 <script defer src="{{ $searchJS.RelPermalink }}"></script>
 {{ end }}
 
+{{ if .Site.Params.t3dversion }}
+{{ $versionJS := resources.Get "js/version.js" | resources.ExecuteAsTemplate "js/version.js" . | resources.Minify | fingerprint }}
+<script defer src="{{ $versionJS.RelPermalink }}"></script>
+{{ end }}
+
 {{ if default true .Site.Params.GeekdocAnchorCopy }}
 <script defer src="{{ index .Site.Data.assets "js/clipboard.min.js" | relURL }}"></script>
 <script>
