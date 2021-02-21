@@ -6,7 +6,7 @@
       "href": "{{ $page.RelPermalink }}",
       "title": {{ (partial "title" $page) | jsonify }},
       "parent": {{ with $page.Parent }}{{ (partial "title" .) | jsonify }}{{ else }}""{{ end }},
-      "content": {{ with $page.Params.GeekdocSearchKeywords }}{{ . | jsonify }}{{ else }}{{ $page.Plain | jsonify }}{{ end }},
+      "content": {{ with $page.Params.GeekdocSearchKeywords }}"{{ range . }}{{ . }} {{ end }}"{{ else }}{{ $page.Plain | jsonify }}{{ end }},
     }
   {{ end }}
 ]
