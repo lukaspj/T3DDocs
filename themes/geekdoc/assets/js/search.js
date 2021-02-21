@@ -6,7 +6,7 @@
 (function() {
   const input = document.querySelector('#gdoc-search-input');
   const results = document.querySelector('#gdoc-search-results');
-  let showParent = {{ if .Site.Params.GeekdocSearchShowParent }}true{{ else }}false{{ end }}
+  let showParent = {{ if .Site.Params.GeekdocSearchShowParent }}true{{ else }}false{{ end }};
 
   input.addEventListener('focus', init);
   input.addEventListener('keyup', search);
