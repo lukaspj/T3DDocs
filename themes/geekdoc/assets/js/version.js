@@ -13,7 +13,7 @@
                 const opt = document.createElement('option');
                 opt.value = data[key];
                 opt.innerText = key;
-                opt.selected = data[key] === '{{ .Site.Params.t3dversion }}';
+                opt.selected = key === '{{ .Site.Params.t3dversion }}';
                 versionSelect.appendChild(opt);
             }
         });
