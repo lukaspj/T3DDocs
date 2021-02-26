@@ -1,0 +1,6 @@
+more:
+- name: Download Documentation
+  ref: /offline.zip
+  external: true
+  icon: download
+  offline: false

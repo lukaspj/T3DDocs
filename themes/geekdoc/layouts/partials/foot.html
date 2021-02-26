@@ -6,7 +6,7 @@
 <script defer src="{{ $searchJS.RelPermalink }}"></script>
 {{ end }}
 
-{{ if .Site.Params.t3dversion }}
+{{ if and .Site.Params.t3dversion (not .Site.Params.offline) }}
 {{ $versionJS := resources.Get "js/version.js" | resources.ExecuteAsTemplate "js/version.js" . | resources.Minify | fingerprint }}
 <script defer src="{{ $versionJS.RelPermalink }}"></script>
 {{ end }}

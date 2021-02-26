@@ -3,3 +3,4 @@ public/
 .idea/
 content/_generated
 resources/
+static/offline.zip

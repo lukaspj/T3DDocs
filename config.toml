@@ -2,6 +2,7 @@ baseURL = "https://t3ddocs.lukasj.org/"
 languageCode = "en-us"
 title = "Torque3D Documentation"
 theme = "geekdoc"
+relativeurls = true
 
 # Required to get well formatted code blocks
 pygmentsUseClasses = true
@@ -28,3 +29,5 @@ pygmentsCodeFences = true
 geekdocMenuBundle = true
 geekdocSearchShowParent = true
 geekdocCollapseSection = true
+t3dversion = "4.0"
+offline = true

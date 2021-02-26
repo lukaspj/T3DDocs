@@ -6,14 +6,14 @@
 
 <link rel="icon" href="{{ "favicon/favicon-32x32.png" | relURL }}" type="image/x-icon">
 
-<link rel="preload" as="font" href="{{ "fonts/Metropolis.woff2" | relURL }}" type="font/woff2" crossorigin="anonymous">
-<link rel="preload" as="font" href="{{ "fonts/LiberationSans.woff2" | relURL }}" type="font/woff2" crossorigin="anonymous">
-<link rel="preload" as="font" href="{{ "fonts/LiberationSans-Bold.woff2" | relURL }}" type="font/woff2" crossorigin="anonymous">
-<link rel="preload" as="font" href="{{ "fonts/LiberationSans-BoldItalic.woff2" | relURL }}" type="font/woff2" crossorigin="anonymous">
-<link rel="preload" as="font" href="{{ "fonts/LiberationSans-Italic.woff2" | relURL }}" type="font/woff2" crossorigin="anonymous">
-<link rel="preload" as="font" href="{{ "fonts/LiberationMono.woff2" | relURL }}" type="font/woff2" crossorigin="anonymous">
-<link rel="preload" as="font" href="{{ "fonts/DroidSans.woff2" | relURL }}" type="font/woff2" crossorigin="anonymous">
-<link rel="preload" as="font" href="{{ "fonts/GeekdocIcons.woff2" | relURL }}" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" as="font" href="{{ "fonts/Metropolis.woff2" | relURL }}" type="font/woff2" {{ if not $.Site.Params.offline }}crossorigin="anonymous"{{ end }}>
+<link rel="preload" as="font" href="{{ "fonts/LiberationSans.woff2" | relURL }}" type="font/woff2" {{ if not $.Site.Params.offline }}crossorigin="anonymous"{{ end }}>
+<link rel="preload" as="font" href="{{ "fonts/LiberationSans-Bold.woff2" | relURL }}" type="font/woff2" {{ if not $.Site.Params.offline }}crossorigin="anonymous"{{ end }}>
+<link rel="preload" as="font" href="{{ "fonts/LiberationSans-BoldItalic.woff2" | relURL }}" type="font/woff2" {{ if not $.Site.Params.offline }}crossorigin="anonymous"{{ end }}>
+<link rel="preload" as="font" href="{{ "fonts/LiberationSans-Italic.woff2" | relURL }}" type="font/woff2" {{ if not $.Site.Params.offline }}crossorigin="anonymous"{{ end }}>
+<link rel="preload" as="font" href="{{ "fonts/LiberationMono.woff2" | relURL }}" type="font/woff2" {{ if not $.Site.Params.offline }}crossorigin="anonymous"{{ end }}>
+<link rel="preload" as="font" href="{{ "fonts/DroidSans.woff2" | relURL }}" type="font/woff2" {{ if not $.Site.Params.offline }}crossorigin="anonymous"{{ end }}>
+<link rel="preload" as="font" href="{{ "fonts/GeekdocIcons.woff2" | relURL }}" type="font/woff2" {{ if not $.Site.Params.offline }}crossorigin="anonymous"{{ end }}>
 
 <!--
 <link rel="preload" href="{{ index .Site.Data.assets "main.min.css" | relURL }}" as="style">
@@ -26,11 +26,11 @@
 <link rel="stylesheet" href="{{ index .Site.Data.assets "print.min.css" | relURL }}" media="print">
 
 <link rel="preload" href="{{ index .Site.Data.assets "custom.css" | relURL }}" as="style">
-<link rel="stylesheet" href="{{ index .Site.Data.assets "custom.css" | relURL }}" media="all">
+<link rel="stylesheet" href="{{ index .Site.Data.assets "custom.css" | relURL }}" miedia="all">
 -->
 
 {{ $main := resources.Get "scss/main.scss" | resources.ExecuteAsTemplate "css/main.scss" . | toCSS | minify | resources.Fingerprint "sha512" }}
-<link rel="stylesheet" href="{{ $main.RelPermalink }}" integrity="{{ $main.Data.Integrity }}">
+<link rel="stylesheet" href="{{ $main.RelPermalink }}" {{ if not $.Site.Params.offline }}integrity="{{ $main.Data.Integrity }}" crossorigin="anonymous"{{ end }}>
 
 {{ with .OutputFormats.Get "rss" -}}
     {{ printf `<link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML }}

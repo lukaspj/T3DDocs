@@ -7,6 +7,7 @@
 
 <ul class="gdoc-nav__list">
 {{ range sort (default (seq 0) .sect) "weight" }}
+    {{ if or (not site.Params.offline) (default true .offline) }}
     {{ $current.Scratch.Set "current" $current }}
     {{ $current.Scratch.Set "site" $site }}
 
@@ -53,6 +54,7 @@
             {{ template "menu-file" dict "sect" $sub "current" ($current.Scratch.Get "current") "site" ($current.Scratch.Get "site") }}
         {{ end }}
     </li>
+    {{ end }}
 
 {{ end }}
 </ul>
