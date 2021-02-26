@@ -32,7 +32,7 @@
     }
 
     function getJson(src, callback) {
-        fetch(src)
+        fetch(src, {cache: "no-cache"})
             .then(fetchErrors)
             .then(response => response.json())
             .then(json => callback(json))
