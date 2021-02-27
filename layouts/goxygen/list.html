@@ -9,7 +9,7 @@
     {{ range where (where .Site.Pages ".Params.goxygen.section" $.Params.goxygen.section) ".Params.goxygen.kind" $.Params.goxygen.kind }}
         {{ if not (eq . $) }}
         <li>
-            <a href="{{.RelPermalink}}">{{.Title}}</a>
+            <a href="{{.RelPermalink}}{{if .Site.Params.offline}}index.html{{end}}">{{.Title}}</a>
         </li>
         {{ end }}
     {{ end }}

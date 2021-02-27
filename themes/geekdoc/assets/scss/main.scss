@@ -1,7 +1,12 @@
 @charset "utf-8";
 
+$fa-font-path: "../fonts";
+
 // Import base (variables and mixins), typography and general colors
 @import 'theme/_all';
+@import 'font-awesome/fontawesome';
+@import 'font-awesome/solid';
+@import 'font-awesome/brands';
 
 // TODO
 // Custom user stuff

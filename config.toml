@@ -3,6 +3,7 @@ languageCode = "en-us"
 title = "Torque3D Documentation"
 theme = "geekdoc"
 relativeurls = true
+timeout = 60000
 
 # Required to get well formatted code blocks
 pygmentsUseClasses = true
