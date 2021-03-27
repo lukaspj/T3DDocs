@@ -1,9 +1,107 @@
+body {
+  background: #eeeeee;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: rgb(233, 70, 72);
+}
+
+.container {
+  max-width: 1340px;
+}
+
+.gdoc-header {
+  background: #eeeeee;
+  border: none;
+  height: 80px;
+
+  &__title {
+    padding: 5px 15px;
+  }
+
+  .gdoc-nav__control {
+    color: #343a40;
+  }
+}
+
+.gdoc-page h1 {
+  line-height: 2.5rem;
+}
+.gdoc-page, .gdoc-search, .gdoc-nav--main, .gdoc-nav--more {
+  background-color: #ffffff;
+  box-shadow: rgba(233, 70, 72, 0.1) 0 2px 4px -1px;
+  border-radius: 4px;
+  padding: 8px;
+}
+
+.gdoc-nav {
+  nav {
+    padding: 0 2rem 0 0;
+
+    > section {
+      margin-top: 0.5rem;
+    }
+  }
+}
+
+@media screen and (max-width:39rem) {
+  .gdoc-brand__img {
+    display: block;
+    height: 55px;
+  }
+
+  .container {
+    padding: 1rem 0;
+  }
+
+  .gdoc-header {
+    height: 55px;
+    &__title {
+      padding: 0 15px;
+    }
+  }
+}
+
+.gdoc-navbar {
+  background: rgb(233, 70, 72);
+
+  > div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 15px;
+
+    ul {
+      flex: 1 1 auto;
+      margin: 0;
+      padding: 0;
+
+      li {
+        float: left;
+        font-size: 13px;
+        list-style: none;
+        display: inline-block;
+
+
+        a, a:visited {
+          line-height: 52px;
+          color: rgba(255, 255, 255, 0.7);
+          text-decoration: none;
+          padding: 0 18px;
+        }
+      }
+    }
+  }
+}
+
 .docstring-section {
   &__title {
     font-weight: bold;
   }
+
   &__content {
     padding-left: 2rem;
+
     p {
       margin-block-start: 0.2em;
       margin-block-end: 0.2em;
@@ -12,7 +110,7 @@
 }
 
 pre.chroma {
-  background-color: rgba(233,236,239,.5);
+  background-color: rgba(233, 236, 239, .5);
   display: block;
   line-height: 1.45;
   font-size: .85em;
@@ -71,6 +169,7 @@ pre.chroma {
     }
   }
 }
+
 .tj_container {
   * {
     position: relative;
@@ -78,16 +177,16 @@ pre.chroma {
   }
 }
 
-.tj_container ul{
+.tj_container ul {
   padding-left: 2em;
   list-style-type: none;
 }
 
-.tj_container > ul:first-of-type{
+.tj_container > ul:first-of-type {
   padding: 0;
 }
 
-.tj_container li span.tj_description{
+.tj_container li span.tj_description {
   cursor: pointer;
   padding: 2px 5px;
   display: block;
@@ -103,38 +202,38 @@ pre.chroma {
   text-align: left;
 }
 
-.tj_container li span.tj_description:hover{
+.tj_container li span.tj_description:hover {
   background-color: #ccc;
 }
 
-.tj_container li span.tj_mod_icon, .tj_container li span.tj_icon{
+.tj_container li span.tj_mod_icon, .tj_container li span.tj_icon {
   margin-right: 0.5em;
   display: inline-block;
 }
 
-.tj_container li span.tj_mod_icon, .tj_container li span.tj_mod_icon *{
+.tj_container li span.tj_mod_icon, .tj_container li span.tj_mod_icon * {
   width: 1em;
 }
 
-.tj_container li span.tj_description.tj_leaf{
+.tj_container li span.tj_description.tj_leaf {
   margin-left: 1.5em;
 }
 
-.tj_container li[disabled=""]{
+.tj_container li[disabled=""] {
   color: #b5b5b5;
 }
 
-.tj_container li[disabled=""]:hover span.tj_description{
+.tj_container li[disabled=""]:hover span.tj_description {
   cursor: default;
   background-color: inherit;
 }
 
-.tj_container span.tj_description.selected{
+.tj_container span.tj_description.selected {
   background-color: #2b2b2b;
   color: #fff;
 }
 
-.tj_container span.tj_description.selected:hover{
+.tj_container span.tj_description.selected:hover {
   background-color: #606060;
 }
 

@@ -1,16 +1,28 @@
 <header class="gdoc-header">
-    <div class="container flex align-center justify-between">
+    <div class="container flex align-center justify-between gdoc-header__title">
+        <a class="gdoc-header__link" href="{{ .Root.Site.BaseURL }}">
+            <span class="gdoc-brand flex align-center">
+                <img class="gdoc-brand__img" src="{{ (default "brand.svg" .Root.Site.Params.GeekdocLogo) | relURL }}" alt="">
+            </span>
+        </a>
         {{ if .MenuEnabled }}
         <label for="menu-control" class="gdoc-nav__control">
             <svg class="icon menu"><use xlink:href="#menu"></use></svg>
             <svg class="icon arrow-back"><use xlink:href="#arrow_back"></use></svg>
         </label>
         {{ end }}
-        <a class="gdoc-header__link" href="{{ .Root.Site.BaseURL }}">
-            <span class="gdoc-brand flex align-center">
-                <img class="gdoc-brand__img" src="{{ (default "brand.svg" .Root.Site.Params.GeekdocLogo) | relURL }}" alt="" width=38 height=38>
-                {{ .Root.Site.Title }}
-            </span>
-        </a>
     </div>
 </header>
+
+<nav class="gdoc-navbar">
+    <div class="container">
+        <ul>
+            <li>
+                <a href="/">Home</a>
+            </li>
+            <li>
+                <a href="https://ipbt3d.lukasj.org/">Torque Game Engines</a>
+            </li>
+        </ul>
+    </div>
+</nav>

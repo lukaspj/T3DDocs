@@ -30,3 +30,4 @@ pygmentsCodeFences = true
 geekdocMenuBundle = true
 geekdocSearchShowParent = true
 geekdocCollapseSection = true
+geekdocLogo = "logo.png"
