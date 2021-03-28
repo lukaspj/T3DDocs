@@ -1,4 +1,4 @@
-baseURL = "https://t3ddocs.lukasj.org/"
+baseURL = "https://reference.torque3d.org/"
 languageCode = "en-us"
 title = "Torque3D Documentation"
 theme = "geekdoc"
